@@ -1,22 +1,5 @@
-# Scheletro progetto Java
+# Flood Monitoring and Management System
 
-<div align="center">
-  <b>Progetto dell’insegnamento di Laboratorio di Programmazione ad Oggetti</b>
-  <br>
-  <b>A.A. 2021/2022</b>
-  <br>
-  <b>Corso di Laurea in Informatica</b>
-  <br>
-  <b>Università degli studi dell'Aquila</b>
-  <br>
-  <b>Docente: Dott. Phuong T. Nguyen</b>
-  <br>
-  <b>Collaboratore: Dott. Amleto Di Salle</b>
-  <br>
-  <b>Collaboratore: Dott. Claudio Di Sipio</b>
-  <br>
-  <b>Collaboratore: Dott. Riccardo Rubei</b>
-
-</div>
-
-
+Project developed in team with:
+* Andrea Di Prospero (andrea.diprospero@student.univaq.it, https://github.com/andrea02dp-byte)
+* Luca Tracanna (luca.tracanna@student.univaq.it, https://github.com/luca-tracanna)
