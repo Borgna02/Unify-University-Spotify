@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="1.7976931348623157E308" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unify.nullpointerexception.controller.CreateOrEditArtistController">
+   <children>
+      <HBox maxHeight="-Infinity" prefHeight="48.0" prefWidth="509.0" VBox.vgrow="NEVER">
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #25408f;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/whiteBack.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator prefHeight="1.0" prefWidth="183.0" visible="false" HBox.hgrow="ALWAYS" />
+            <Text fx:id="nameAction" fill="#25408f" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Separator prefHeight="4.0" prefWidth="210.0" visible="false" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="34.0" prefWidth="746.0" spacing="8.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nome d'arte" />
+            <TextField fx:id="stageNameField" onKeyTyped="#editStageNameField" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="196.0" prefHeight="34.0" prefWidth="746.0" spacing="8.0">
+         <children>
+            <HBox fx:id="dataErrorMsg" alignment="CENTER" prefHeight="21.0" prefWidth="260.0" style="-fx-background-color: #fa9d9d; -fx-background-radius: 3px;" visible="false">
+               <children>
+                  <Text fx:id="dataErrorTxt" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="I dati inseriti non sono validi" textAlignment="CENTER" wrappingWidth="259.73670768737793">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="230.0" prefWidth="810.0" spacing="20.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox alignment="CENTER" spacing="3.0">
+               <children>
+                  <Text fill="#25408f" strokeType="OUTSIDE" strokeWidth="0.0" text="Carica la biografia">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <TextArea fx:id="biographyBox" prefHeight="142.0" prefWidth="466.0">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextArea>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="114.0" prefWidth="166.0" spacing="5.0">
+               <children>
+                  <Text fill="#25408f" strokeType="OUTSIDE" strokeWidth="0.0" text="Carica l'immagine">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="tempAvatar" fitHeight="112.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/artists_avatars/2.jpeg" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="32.0" prefWidth="166.0" spacing="5.0">
+                     <children>
+                        <Button fx:id="browseFiles" mnemonicParsing="false" onAction="#browseFiles" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #25408f;" text="Sfoglia" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" maxHeight="35.0" minHeight="35.0" prefHeight="35.0" prefWidth="810.0" spacing="5.0" VBox.vgrow="NEVER">
+         <children>
+            <Button fx:id="editPicturesBtn" layoutX="292.0" layoutY="11.0" maxHeight="34.0" maxWidth="179.0" minHeight="33.0" minWidth="81.0" mnemonicParsing="false" onAction="#showPictures" prefHeight="34.0" prefWidth="158.0" style="-fx-background-color: #25408f;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/whiteEdit.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="editSongsBtn" layoutX="414.0" layoutY="11.0" maxHeight="34.0" maxWidth="179.0" minHeight="33.0" minWidth="81.0" mnemonicParsing="false" onAction="#showSongs" prefHeight="34.0" prefWidth="158.0" style="-fx-background-color: #25408f;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/whiteEdit.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="editAlbumsBtn" layoutX="598.0" layoutY="11.0" maxHeight="34.0" maxWidth="179.0" minHeight="33.0" minWidth="81.0" mnemonicParsing="false" onAction="#showAlbums" prefHeight="34.0" prefWidth="147.0" style="-fx-background-color: #25408f;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/whiteEdit.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="saveBtn" disable="true" maxHeight="34.0" maxWidth="100.0" minHeight="33.0" minWidth="81.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="34.0" prefWidth="81.0" style="-fx-background-color: #25408f;" text="Salva" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/whiteSave.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="deleteBtn" layoutX="720.0" layoutY="12.0" maxHeight="34.0" maxWidth="136.0" minHeight="33.0" minWidth="100.0" mnemonicParsing="false" onAction="#deleteArtist" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: #25408f;" text="Elimina artista" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/whiteTrashBin.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets left="-10.0" />
+               </padding>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<VBox prefHeight="455.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unify.nullpointerexception.controller.ArtistController">
+   <children>
+      <HBox maxHeight="-Infinity" prefHeight="48.0" prefWidth="509.0">
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #eeeeee;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator prefHeight="1.0" prefWidth="183.0" visible="false" HBox.hgrow="ALWAYS" />
+            <Text fill="#25408f" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Separator prefHeight="4.0" prefWidth="210.0" visible="false" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <ImageView fx:id="artistMainPicture" fitHeight="115.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/avatars/default_user.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="170.0" prefWidth="527.0">
+               <children>
+                  <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" wrappingWidth="448.13671875">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vbarPolicy="ALWAYS">
+         <content>
+            <VBox>
+               <children>
+                  <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="646.0" prefWidth="809.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="160.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="160.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="160.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="10.0" vgrow="ALWAYS" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Discografia" textAlignment="CENTER" wrappingWidth="83.09765625" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                           <content>
+                              <HBox fx:id="discoBox" maxWidth="1.7976931348623157E308" prefHeight="158.0" prefWidth="809.0" spacing="5.0">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Album" textAlignment="CENTER" wrappingWidth="83.09765625" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <ScrollPane fitToHeight="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" GridPane.rowIndex="3">
+                           <content>
+                              <HBox fx:id="albumBox" prefHeight="145.0" prefWidth="698.0" spacing="5.0">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                        <Text layoutX="373.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Foto ufficali" textAlignment="CENTER" wrappingWidth="83.09765625" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <ScrollPane fitToHeight="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" GridPane.rowIndex="5">
+                           <content>
+                              <HBox fx:id="picturesBox" prefHeight="145.0" prefWidth="698.0" spacing="5.0">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Biografia" textAlignment="CENTER" wrappingWidth="83.09765625" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </GridPane>
+                  <TextFlow maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="328.0" prefWidth="809.0">
+                     <children>
+                        <Text fx:id="biographyBox" strokeType="OUTSIDE" strokeWidth="0.0" text="Biografia non trovata">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" />
+                     </padding>
+                  </TextFlow>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

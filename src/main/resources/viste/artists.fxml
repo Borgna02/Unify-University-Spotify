@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="465.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unify.nullpointerexception.controller.ArtistsController">
+   <children>
+      <GridPane alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="824.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="261.60002746582035" minHeight="10.0" prefHeight="209.5999816894531" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="165.59998168945313" minHeight="10.0" prefHeight="105.60001831054689" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="250.4000244140625" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="310.3999938964844" minHeight="10.0" prefHeight="184.60000000000002" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="222.0" prefWidth="800.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Artista">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="52.0" prefWidth="824.0" GridPane.rowIndex="2">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cerca un artista">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <TextField fx:id="searchBar" maxHeight="30.0" maxWidth="-Infinity" minHeight="2.0" onKeyTyped="#search" prefHeight="30.0" prefWidth="330.0">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <ListView fx:id="list" maxWidth="-Infinity" onMouseClicked="#listItemClick" prefHeight="110.0" prefWidth="330.0" visible="false" VBox.vgrow="SOMETIMES">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                  </ListView>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </children>
+</HBox>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="120.0" maxWidth="1.7976931348623157E308" minHeight="120.0" prefHeight="120.0" prefWidth="785.0" style="-fx-background-color: #F1C350;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unify.nullpointerexception.controller.MusicBarController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="180.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="630.4000427246094" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <GridPane alignment="CENTER" prefHeight="100.0" prefWidth="555.0" GridPane.columnIndex="1">
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="40.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="57.4" minHeight="10.0" prefHeight="24.999993896484376" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="57.4" minHeight="10.0" prefHeight="52.200006103515626" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="70.20001220703125" minHeight="0.0" prefHeight="62.99999999999999" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_RIGHT" GridPane.rowIndex="1">
+               <children>
+                  <Separator prefHeight="8.0" prefWidth="192.0" visible="false" HBox.hgrow="ALWAYS" />
+                  <ImageView fx:id="skipBack" fitHeight="20.0" fitWidth="20.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#skipBackPressed" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../img/next.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="playPauseButton" fitHeight="40.0" fitWidth="40.0" layoutX="192.0" layoutY="10.0" onMouseClicked="#playPressed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/play.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="skipFwd" fitHeight="20.0" fitWidth="20.0" layoutX="192.0" layoutY="10.0" onMouseClicked="#skipFwdPressed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/next.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Separator prefHeight="0.0" prefWidth="0.0" visible="false" HBox.hgrow="ALWAYS" />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="7.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../img/volume.png" />
+                     </image>
+                  </ImageView>
+                  <Slider fx:id="volumeSlider" blockIncrement="1.0" HBox.hgrow="NEVER">
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
+                  </Slider>
+                  <Separator prefHeight="6.0" prefWidth="50.0" visible="false" HBox.hgrow="NEVER" />
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Separator prefWidth="100.0" visible="false" />
+                  <Text fx:id="songActualTime" strokeType="OUTSIDE" strokeWidth="0.0" text="0:00">
+                     <HBox.margin>
+                        <Insets bottom="10.0" right="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Slider fx:id="songSlider" blockIncrement="1.0" max="10000.0" maxWidth="600.0" minWidth="300.0" prefHeight="0.0" prefWidth="300.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="10.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
+                  </Slider>
+                  <Text id="songTotalTime" fx:id="songTotalTime" strokeType="OUTSIDE" strokeWidth="0.0" text="--:--">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Separator layoutX="48.0" layoutY="48.0" prefWidth="100.0" visible="false" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <VBox fx:id="audioPlayerMsgBox" alignment="CENTER" onMouseClicked="#showSongView" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #25408F;">
+         <children>
+            <Text fx:id="whatIsPlayingMsg" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Stai ascoltando:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="songTitle" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="nomeCanzone">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Text fx:id="artistName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="di nomeArtista" textAlignment="CENTER">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Text fx:id="playASongMsg" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Riproduci una canzone">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </VBox>
+   </children>
+</GridPane>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="554.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unify.nullpointerexception.controller.AlbumController">
+   <children>
+      <HBox maxHeight="-Infinity" prefHeight="30.0" prefWidth="728.0">
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #eeeeee;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator prefHeight="1.0" prefWidth="183.0" visible="false" HBox.hgrow="ALWAYS" />
+            <Text fill="#25408f" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Separator prefHeight="4.0" prefWidth="210.0" visible="false" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <ImageView fx:id="coverArt" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/cover_singoli/default_cover.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="450.0" minWidth="100.0" prefHeight="155.0" prefWidth="401.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Text fx:id="title" strokeType="OUTSIDE" strokeWidth="0.0" text="Titolo" wrappingWidth="448.13671875">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="author" layoutX="10.0" layoutY="28.0" onMouseClicked="#goToArtistPage" strokeType="OUTSIDE" strokeWidth="0.0" text="Autore" wrappingWidth="447.13671875" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text fx:id="date" strokeType="OUTSIDE" strokeWidth="0.0" text="Data" wrappingWidth="78.921875">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" spacing="5.0">
+               <children>
+                  <Button fx:id="playButton" alignment="CENTER" maxWidth="107.0" minWidth="80.0" mnemonicParsing="false" onAction="#playButtonPressed" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #25408F;" text="Riproduci" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/whitePlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="addToQueueBtn" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxWidth="160.0" minWidth="160.0" mnemonicParsing="false" onAction="#addToQueue" prefHeight="34.0" prefWidth="160.0" style="-fx-background-color: #25408F;" text="Aggiungi alla coda" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/whitePlus.PNG" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Brani" textAlignment="CENTER" wrappingWidth="62.13671875">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefViewportHeight="264.0" prefViewportWidth="709.0" style="-fx-border-color: #25408F;" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox fx:id="songsBox" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

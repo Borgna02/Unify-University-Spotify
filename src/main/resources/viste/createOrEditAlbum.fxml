@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="createOrEditPlaylistPage" alignment="TOP_CENTER" prefHeight="447.0" prefWidth="750.0" spacing="10.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unify.nullpointerexception.controller.CreateOrEditAlbumController">
+   <children>
+      <HBox maxHeight="-Infinity" prefHeight="48.0" prefWidth="509.0" VBox.vgrow="NEVER">
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #eeeeee;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator prefHeight="1.0" prefWidth="183.0" visible="false" HBox.hgrow="ALWAYS" />
+            <Text fx:id="pageTitle" fill="#25408f" strokeType="OUTSIDE" strokeWidth="0.0" text="Testo">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Separator prefHeight="4.0" prefWidth="210.0" visible="false" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox VBox.vgrow="NEVER">
+         <children>
+            <VBox alignment="CENTER" maxHeight="136.0" maxWidth="1.7976931348623157E308" minHeight="120.0" prefHeight="136.0" prefWidth="538.0">
+               <children>
+                  <HBox alignment="CENTER" spacing="5.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <TextField fx:id="albumName" maxWidth="180.0" minWidth="180.0" onKeyTyped="#editAlbumName" prefWidth="180.0" promptText="Nome dell'album" />
+                        <ChoiceBox fx:id="genreChoice" prefWidth="150.0" />
+                        <DatePicker fx:id="datePicker" promptText="Data di uscita" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <ChoiceBox fx:id="choice" prefWidth="100.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ChoiceBox>
+                        <TextField fx:id="searchBar" maxHeight="30.0" maxWidth="-Infinity" minHeight="2.0" onKeyTyped="#search" prefHeight="30.0" prefWidth="330.0" promptText="Cerca una canzone da aggiungere...">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </TextField>
+                        <Button fx:id="addSongButton" disable="true" mnemonicParsing="false" onAction="#addSongToAlbum" style="-fx-background-color: #25408f;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/whitePlus.PNG" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <ListView fx:id="searchList" maxHeight="110.0" maxWidth="-Infinity" onMouseClicked="#listItemClick" prefHeight="110.0" prefWidth="330.0" visible="false" VBox.vgrow="NEVER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets left="70.0" />
+                     </VBox.margin>
+                  </ListView>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="114.0" prefWidth="166.0" spacing="5.0">
+               <children>
+                  <ImageView fx:id="tempAvatar" fitHeight="112.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/cover_album/default_cover.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="32.0" prefWidth="166.0" spacing="5.0">
+                     <children>
+                        <Button fx:id="sfogliaBtn" mnemonicParsing="false" onAction="#browseFiles" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #25408f;" text="Sfoglia" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="181.0" prefWidth="750.0" spacing="5.0">
+         <children>
+            <Button fx:id="removeSong" disable="true" mnemonicParsing="false" onAction="#removeSong" prefHeight="38.0" prefWidth="38.0" style="-fx-background-color: #25408f;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/whiteTrashBin.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <VBox alignment="BOTTOM_CENTER" maxWidth="330.0" minWidth="330.0" prefHeight="163.0" prefWidth="330.0">
+               <children>
+                  <HBox fx:id="errorBox" alignment="CENTER" style="-fx-background-color: #fa9d9d; -fx-border-radius: 3px;" visible="false">
+                     <children>
+                        <Text fx:id="errorText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Errore" textAlignment="JUSTIFY">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="330.0" prefHeight="20.0" prefWidth="330.0" style="-fx-background-color: #F1C350;">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Canzoni nell'album:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <ListView fx:id="addedSongsList" maxHeight="180.0" maxWidth="330.0" onMouseClicked="#selectAddedSong" prefHeight="133.0" prefWidth="330.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ListView>
+               </children>
+            </VBox>
+            <Button fx:id="saveAlbumBtn" disable="true" mnemonicParsing="false" onAction="#saveAlbum" prefHeight="38.0" prefWidth="38.0" style="-fx-background-color: #25408f;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/whiteSave.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="deleteAlbum" mnemonicParsing="false" onAction="#deleteAlbum" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #25408f;" text="Elimina album" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/whiteTrashBin.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

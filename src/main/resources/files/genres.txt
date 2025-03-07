@@ -1,0 +1,3 @@
+0;Elettronica
+1;Pop
+2;Liscio

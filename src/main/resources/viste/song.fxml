@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<VBox prefHeight="511.0" prefWidth="875.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unify.nullpointerexception.controller.SongController">
+   <children>
+      <HBox maxHeight="-Infinity" prefHeight="48.0" prefWidth="509.0">
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #eeeeee;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator prefHeight="1.0" prefWidth="183.0" visible="false" HBox.hgrow="ALWAYS" />
+            <Text fill="#25408f" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Separator prefHeight="4.0" prefWidth="210.0" visible="false" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <ImageView fx:id="coverArt" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/cover_singoli/default_cover.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="450.0" minWidth="100.0" prefHeight="175.0" prefWidth="450.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Text fx:id="title" strokeType="OUTSIDE" strokeWidth="0.0" text="Titolo" wrappingWidth="391.33673095703125">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <FlowPane fx:id="artistsContainer" maxWidth="-Infinity" prefHeight="200.0" prefWidth="440.0" />
+                  <Text fx:id="date" strokeType="OUTSIDE" strokeWidth="0.0" text="Data" wrappingWidth="78.921875">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" spacing="5.0" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <children>
+                  <Button fx:id="playButton" alignment="CENTER" maxWidth="107.0" minWidth="80.0" mnemonicParsing="false" onAction="#playButtonPressed" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #25408F;" text="Riproduci" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/whitePlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="addToQueueBtn" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxWidth="160.0" minWidth="160.0" mnemonicParsing="false" onAction="#addToQueue" prefHeight="34.0" prefWidth="160.0" style="-fx-background-color: #25408F;" text="Aggiungi alla coda" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/whitePlus.PNG" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Testo" textAlignment="CENTER" wrappingWidth="62.13671875">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefViewportHeight="264.0" prefViewportWidth="709.0" style="-fx-border-color: #25408F;" VBox.vgrow="ALWAYS">
+         <content>
+            <TextFlow fx:id="textContainer" lineSpacing="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER">
+               <children>
+                  <Text fx:id="lyrics" strokeType="OUTSIDE" strokeWidth="0.0" text="Testo non trovato" textAlignment="CENTER" wrappingWidth="31.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </TextFlow>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

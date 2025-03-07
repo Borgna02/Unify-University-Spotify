@@ -1,0 +1,2 @@
+8;2;Canzoni pop;1;4;5
+9;2;Alan Walker;0;3;3

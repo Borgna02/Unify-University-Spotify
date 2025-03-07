@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unify.nullpointerexception.controller.LayoutController">
+   <left>
+      <GridPane alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="0.0" minWidth="-Infinity" prefHeight="238.0" prefWidth="180.0" style="-fx-background-color: #F1C350;" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="88.00001220703125" minWidth="10.0" prefWidth="88.00001220703125" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="123.99999618530273" minWidth="10.0" prefWidth="91.99998779296875" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="57.0" minHeight="57.0" prefHeight="57.0" valignment="CENTER" vgrow="NEVER" />
+            <RowConstraints maxHeight="1000.0" minHeight="0.0" prefHeight="477.60000610351557" valignment="BOTTOM" vgrow="ALWAYS" />
+         </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" maxHeight="45.0" minHeight="45.0" prefHeight="45.0" prefWidth="181.0" spacing="5.0" GridPane.columnSpan="2" GridPane.valignment="CENTER">
+               <children>
+                  <ImageView fx:id="userAvatar" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/avatars/default_user.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
+                  <Label fx:id="sidebarUsernameField" alignment="CENTER" maxHeight="46.0" minHeight="45.0" minWidth="80.0" prefHeight="46.0" prefWidth="118.0" text="Username" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox fx:id="menuElements" prefHeight="200.0" prefWidth="152.0" spacing="3.0" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="userSettingsButton" alignment="CENTER" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" onAction="#openUserOptions" prefWidth="180.0" style="-fx-background-color: #25408F;" text="impostazioni profilo" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="66.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/whiteSettings.PNG" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="logoutButton" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" onAction="#logoutAction" prefWidth="180.0" style="-fx-background-color: #25408F;" text="logout" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/whiteLogout.PNG" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Separator maxHeight="1.0" minHeight="1.0" prefHeight="1.0" prefWidth="200.0" style="-fx-background-color: white;" />
+               </children></VBox>
+         </children>
+      </GridPane>
+   </left>
+</BorderPane>

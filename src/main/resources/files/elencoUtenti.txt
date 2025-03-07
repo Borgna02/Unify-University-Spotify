@@ -1,0 +1,4 @@
+1;tracky;luca@email.com;Luca123;false
+2;admin;;;true
+3;andrea;a@a.it;Andrea123;false
+5;daniele;Dani@email.it;Daniele123;false

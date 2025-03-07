@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unify.nullpointerexception.controller.CreateOrEditUserController">
+   <children>
+      <HBox maxHeight="-Infinity" prefHeight="48.0" prefWidth="509.0" VBox.vgrow="NEVER">
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #25408f;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/whiteBack.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator prefHeight="1.0" prefWidth="183.0" visible="false" HBox.hgrow="ALWAYS" />
+            <Text fx:id="title" fill="#25408f" strokeType="OUTSIDE" strokeWidth="0.0" text="Crea profilo">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Separator prefHeight="4.0" prefWidth="210.0" visible="false" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox fx:id="errorBox" alignment="CENTER" maxWidth="400.0" prefHeight="34.0" prefWidth="746.0" spacing="8.0" style="-fx-background-color: #fa9d9d;" visible="false">
+         <children>
+            <Text fx:id="errorTxt" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Error">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="34.0" prefWidth="746.0" spacing="8.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+            <TextField fx:id="usernameField" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="58.0" prefHeight="34.0" prefWidth="746.0" spacing="8.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <TextField fx:id="emailField" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="92.0" prefHeight="34.0" prefWidth="746.0" spacing="8.0">
+         <children>
+            <Text fx:id="passwordText" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <PasswordField fx:id="passwordField" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="127.0" prefHeight="34.0" prefWidth="746.0" spacing="8.0">
+         <children>
+            <Text fx:id="confirmPasswordText" strokeType="OUTSIDE" strokeWidth="0.0" text="Conferma password" />
+            <PasswordField fx:id="confirmPasswordField" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="196.0" prefHeight="34.0" prefWidth="746.0" spacing="8.0">
+         <children>
+            <CheckBox fx:id="adminCheck" mnemonicParsing="false" text="Amministratore" />
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox fx:id="amministratoreCheck" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="252.0" prefWidth="810.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox alignment="CENTER" prefHeight="157.0" prefWidth="111.0">
+               <children>
+                  <ImageView fx:id="tempAvatar" fitHeight="112.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/avatars/default_user.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="sfogliaBtn" mnemonicParsing="false" onAction="#browseFiles" prefHeight="30.0" prefWidth="64.0" style="-fx-background-color: #25408f;" text="Sfoglia" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" maxHeight="35.0" minHeight="35.0" prefHeight="35.0" prefWidth="810.0" spacing="5.0" VBox.vgrow="NEVER">
+         <children>
+            <Button fx:id="deleteBtn" maxHeight="34.0" maxWidth="136.0" minHeight="33.0" minWidth="100.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="34.0" prefWidth="136.0" style="-fx-background-color: #25408f;" text="Elimina account" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/whiteTrashBin.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="-10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="saveBtn" maxHeight="34.0" maxWidth="100.0" minHeight="33.0" minWidth="81.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="34.0" prefWidth="81.0" style="-fx-background-color: #25408f;" text="Salva" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/whiteSave.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

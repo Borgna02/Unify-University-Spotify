@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unify.nullpointerexception.controller.PlaylistController">
+   <children>
+      <HBox maxHeight="-Infinity" prefHeight="34.0" prefWidth="810.0">
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #eeeeee;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator prefHeight="1.0" prefWidth="183.0" visible="false" HBox.hgrow="ALWAYS" />
+            <Text fill="#25408f" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Separator prefHeight="4.0" prefWidth="210.0" visible="false" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" maxHeight="84.0" VBox.vgrow="NEVER">
+         <children>
+            <VBox alignment="CENTER_LEFT" maxHeight="84.0" maxWidth="1.7976931348623157E308" minHeight="50.0" prefHeight="84.0" prefWidth="527.0">
+               <children>
+                  <Text fx:id="playlistName" fill="#25408f" strokeType="OUTSIDE" strokeWidth="0.0" text="NomePlaylist" wrappingWidth="448.13671875">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" spacing="5.0">
+               <children>
+                  <Button fx:id="playButton" alignment="CENTER" maxWidth="107.0" minWidth="80.0" mnemonicParsing="false" onAction="#playButtonPressed" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #25408F;" text="Riproduci" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/whitePlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="addToQueueBtn" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxWidth="160.0" minWidth="160.0" mnemonicParsing="false" onAction="#addToQueue" prefHeight="34.0" prefWidth="160.0" style="-fx-background-color: #25408F;" text="Aggiungi alla coda" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/whitePlus.PNG" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" minHeight="0.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Text fill="#25408f" strokeType="OUTSIDE" strokeWidth="0.0" text="Canzoni" textAlignment="CENTER" wrappingWidth="83.09765625">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" VBox.vgrow="ALWAYS">
+               <content>
+                  <FlowPane fx:id="songsBox" prefHeight="337.0" prefWidth="590.0">
+                     <padding>
+                        <Insets bottom="2.5" left="2.5" right="2.5" top="2.5" />
+                     </padding>
+                  </FlowPane>
+               </content>
+               <padding>
+                  <Insets bottom="2.0" top="2.0" />
+               </padding>
+            </ScrollPane>
+            <HBox alignment="CENTER_RIGHT" maxHeight="35.0" minHeight="35.0" prefHeight="35.0" prefWidth="810.0" spacing="5.0" VBox.vgrow="NEVER">
+               <children>
+                  <Button fx:id="editBtn" maxHeight="33.0" maxWidth="100.0" minHeight="20.0" minWidth="100.0" mnemonicParsing="false" onAction="#editPlaylist" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: #25408f;" text="Modifica" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/whiteEdit.PNG" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="deleteBtn" layoutX="720.0" layoutY="12.0" maxHeight="33.0" maxWidth="100.0" minHeight="33.0" minWidth="100.0" mnemonicParsing="false" onAction="#deletePlaylist" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: #25408f;" text="Elimina" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/whiteTrashBin.PNG" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets left="-10.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>
